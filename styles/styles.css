@@ -1,0 +1,1280 @@
+/* ________________________________________________
+===================================================
+Inhoudsopgaven (+ hyperlinks) *//*
+    00 - BASIS styling
+    01 - HOME pagina
+    02 - ADVIES pagina
+    03 - MENSEN pagina
+    04 - OVER ONS pagina
+    05 - NAVIGATIE pagina (only tablet & mobile)     
+    */
+
+/* 01 HOME css structuur (index.html) {
+    
+    */  nav  /*
+        Navigatie
+            Home
+            Advies
+                - Logo -
+            Mensen
+            Over ons
+
+    */  #homeHeaderMain  /*
+        Header
+            Headerbeelden x3
+
+    */  #zoekFunctie  /*        
+        Zoekfunctie
+            Titel
+            Zoekbalk
+            Dropdowns
+            Checkboxes
+        Button: Zoeken
+    
+    */  #mensenSlider1  /*
+        Container
+            Cards x8
+                Profielfoto
+                Naam + functie
+                Bodycopy
+        Button: Meer collega's
+
+    */  .asideIcoon  /*
+            Scheidings iconen
+
+    */  #artikelContainer  /*
+        Content grid
+            Artikelen
+                Titel
+                Bodycopy
+                "+" button
+        Button: Meer resultaten
+
+    */  #introductieBanner  /*
+        Introductie banner
+            Titel + bodycopy
+        Button: Meer over ons
+
+    */  #specialismenBanner2  /*
+        Specialismen banner
+            Titel + bodycopy
+            Specialismen buttons
+        Button: Meer over ons
+
+    */  footer  /*
+        Footer
+            Shortcuts
+            Footer (inside)
+                Contact
+                Socials
+                Adres
+
+}
+
+/* 02 ADVIES css structuur (advies.html) {
+    */  #adviesHeaderMain  /*
+        Header
+            Headerbeelden
+
+    */  #zoekFunctie  /*        
+        Zoekfunctie
+            Titel
+            Zoekbalk
+            Dropdowns
+            Checkboxes
+        Button: Zoeken
+
+    */  #artikelContainerAdvies  /*
+        Content grid
+            Artikelen
+        Button: Meer resultaten
+
+    */  #specialismenBanner02  /*
+        Specialismen banner
+            Button: Meer over ons
+}
+
+/* 03 MENSEN css structuur (mensen.html) {
+    */  #mensenHeaderMain  /*
+        Header
+            Headerbeelden x3
+
+    */  #afspraakContainer  /*
+        Zoekfunctie
+            Titel
+            Button: bellen
+            Button: afspraak
+
+    */  #mensenSlider2  /*
+        Container
+        Cards x8
+            Profielfoto
+            Naam + functie
+            Bodycopy
+
+    */  #profielFeature,
+        #profielFeature2  /*
+        profielfoto
+            Naam + functie
+            Bodycopy
+
+    */  #mensenSlider3  /*
+        Container
+        Cards x8
+            Profielfoto
+            Naam + functie
+            Bodycopy
+}
+
+/* 04 OVER ONS css structuur (overons.html) {
+    */  #overonsHeaderMain  /*
+        Header
+            Headerbeelden x3
+
+    */  #informatieContainer  /*
+            introductieBanner
+            visieBanner
+            contactBanner
+            historieBanner
+}
+
+/* 05 NAVIGATIE css structuur (navigatie.html) {
+    */  #navigatieContainer  /*
+}
+
+=================================================
+*//*
+
+KLEUREN
+    Creme light: #f6f3ee
+    Creme medium: #e0ded2
+    Creme dark: #bdbbad
+    Mat green medium: #555b53
+    Mat green dark: #2b2e2a
+    Red: #f03c3c
+
+    White: #fff
+    Black: #000
+--
+
+FONTS
+    font-family: 'Source Sans Pro', sans-serif;
+    font width: 200 t/m 700
+--
+
+*//*
+_________________________________________________
+=================================================
+=================================================
+    00  BASIS styling */
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body { background-color: #f6f3ee; }
+*    { box-sizing: border-box; font-family: 'Source Sans Pro', sans-serif; }
+
+::selection { background: #f03c3c9a; }
+img::selection, a::selection, button::selection { background: none; }
+
+/*
+_________________________________________________
+=================================================
+Navigatie(balk) */
+
+nav {
+    height: 5.25rem;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    gap: 0rem;
+    /* >835px */
+    grid-template-areas:
+    "....  home   advies   ..   logo logo   ..   mensen  overOns  ....";
+
+    background: linear-gradient(90deg, #2b2e2a, #555b53, #2b2e2a);
+}
+
+nav p { font-size: 1.4rem; list-style-type: none; }
+
+#home a,
+#advies a,
+#mensen a,
+#overOns a {
+    color: #f6f3ee;
+    text-decoration-line: none;
+}
+
+    #home a.navActive,
+    #advies a.navActive,
+    #mensen a.navActive,
+    #overOns a.navActive {
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-thickness: 0.2rem;
+        text-decoration-color: #f03c3c;
+    }
+
+#home           { grid-area: home; }
+#advies         { grid-area: advies; }
+#mensen         { grid-area: mensen; }
+#overOns        { grid-area: overOns; }
+#logoNavigatie  { grid-area: logo; height: 3rem; }
+
+svg#menu {
+    cursor: pointer;
+    grid-area: menu;
+    display: none;
+    visibility: hidden;
+}
+
+/*
+_________________________________________________
+=================================================
+=================================================
+=================================================
+=================================================
+    01  HOME pagina 
+_________________________________________________
+=================================================
+Header */
+
+#homeHeaderMain {
+    height: 17.5rem;
+
+    background-image: url('../assets/image/home/hunters-race-MYbhN8KaaEc-unsplash.jpg');
+    background-position: center top 50%;
+    background-size: cover;
+}
+
+#homeHeaderLinks {
+    height: 100%;
+    width: 17.5vw;
+    float: left;
+
+    background-image: url('../assets/image/home/nastuh-abootalebi-eHD8Y1Znfpk-unsplash.jpg');
+    background-position: center right 60%;
+    background-size: cover;
+}
+
+#homeHeaderRechts {
+    height: 100%;
+    width: 17.5vw;
+    float: right;
+
+    background-image: url('../assets/image/home/romain-dancre-doplSDELX7E-unsplash.jpg');
+    background-position: center left 40%;
+    background-size: cover;
+}
+
+/*
+_________________________________________________
+=================================================
+Zoekfunctie */
+
+h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+
+    margin-left: 5rem;
+    filter: drop-shadow(0.5rem 0.25rem 0.5rem #000);
+}
+
+#zoekFunctie {
+    width: 40rem;
+    position: relative;
+    top: -8.5rem;
+    margin: auto;
+}
+
+#zoekBalk {
+    cursor: text;
+
+    position: relative;
+    top: 1.3rem;
+    width: 17.5rem;
+    height: 3rem;
+    margin-left: 4rem;
+
+    border-radius: 10rem;
+    border: #555b53 solid 0.3rem;
+    background-color: #fff;
+}
+
+[type="text"] {
+    font-style: italic;
+    letter-spacing: 0.05rem;
+}
+
+    input::placeholder {
+        color: #BDBBAD;
+        font-size: 1rem;
+    }
+
+#zoekContainer {
+    padding: 2rem;
+    background-color: #555b53;
+}
+
+#dropdownContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#dropdown01 fieldset select,
+#dropdown02 fieldset select,
+#dropdown03 fieldset select {
+    cursor: pointer;
+
+    width: 10rem;
+    height: 2rem;
+    margin: 0.25rem;
+
+    border-radius: 10rem;
+    border: #fff solid 0.2rem;
+    background-color: #e0ded2;  
+}
+
+    #dropdown01 fieldset select:hover,
+    #dropdown02 fieldset select:hover,
+    #dropdown03 fieldset select:hover {
+        transition: all 150ms;
+
+        border: #e0ded2 solid 0.2rem;
+        filter: drop-shadow(0rem 0.4rem 0.25rem rgba(0, 0, 0, 0.03));
+        background-color: #fff;
+    }
+
+select {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.025rem;
+
+    padding-left: 0.5rem;
+}
+
+#checklist { margin-top: 0.75rem; }
+
+#checklist fieldset{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+
+    margin-top: 0.25rem;
+    margin-left: 2.5rem;
+}
+
+#checklist fieldset label{
+    color: #fff;
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    margin-right: 0.5rem;
+}
+
+input[type="text"] { padding-left: 2rem; }
+[type="checkbox"]  { cursor: pointer;    }
+
+#zoekButton {
+    cursor: pointer;
+
+    float: right;
+    position: relative;
+    top: -1rem;
+    right: 3rem;
+
+    width: 12.5rem;
+    height: 2.5rem;
+
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.25rem;
+
+    border: none;
+    border-radius: 10rem;
+    background-color: #f03c3c;
+}
+
+    #zoekButton:hover {
+        transition: all 150ms;
+
+        color: #f03c3c;
+        font-size: 1.25rem;
+        font-weight: 600;
+        background-color: #fff;
+        filter: drop-shadow(0rem 0.4rem 0.25rem rgba(0, 0, 0, 0.03));
+    }
+
+/*
+_________________________________________________
+=================================================
+Grid */
+
+main {
+    position: relative;
+    top: -8rem;
+    margin: 0 auto;
+}
+
+/* Scheidings iconen, worden gebruikt door de gehele website */
+
+    .asideIcoon {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        margin-bottom: 2rem;
+    }
+
+/* ================== */
+
+#artikelContainer {
+    display: grid;
+    gap: 1rem;
+
+    margin: auto;
+    width: 80%;
+    height: auto;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    /* >1280px */
+    grid-template-areas: 
+    "artikel01 artikel01 artikel02 artikel03"
+    "artikel01 artikel01 artikel02 artikel03"
+    "artikel04 artikel05 artikel05 artikel03"
+    "artikel04 artikel06 artikel06 artikel03";
+}
+
+main section article {
+    display: grid;
+    padding: 1.75rem 1.5rem 1rem 1.5rem;
+    background-color: #fff;
+}
+
+section article h3 { line-height: 2.25rem; }
+
+section article p.artikelBody {
+    padding-top: 1rem;
+    font-size: 1.15rem;
+    line-height: 1.5rem;
+}
+
+#artikel01 { grid-area: artikel01; }
+#artikel02 { grid-area: artikel02; }
+#artikel03 { grid-area: artikel03; }
+#artikel04 { grid-area: artikel04; }
+#artikel05 { grid-area: artikel05; }
+#artikel06 { grid-area: artikel06; }
+
+#artikel01, #artikel06 { background-color: #2b2e2a; color: #fff;  }
+#artikel02, #artikelBG { background-color: #BDBBAD; }
+#artikel03, #artikel05 { background-color: #555b53; color: #fff; }
+#artikel04             { background-color: #e0ded2; }
+
+h3.artikelTitel { color: #fff; font-size: 2rem; }
+h3.artikelTitelDark { color: #000; font-size: 2rem; }
+
+svg.artikelBtn {
+    cursor: pointer;
+
+    justify-self: end;
+    align-self: flex-end;
+    margin-top: 0.5rem;
+}
+
+section.section {
+    display: flex;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.meerButton {
+    cursor: pointer;
+    margin: 0 auto;
+
+    justify-self: center;
+
+    width: 14rem;
+    height: 2.75rem;
+
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+
+    border: none;
+    border-radius: 10rem;
+    background-color: #f03c3c;
+}
+
+    .meerButton:hover {
+        transition: all 150ms;
+
+        color: #f03c3c;
+        font-size: 1.25rem;
+        font-weight: 600;
+        background-color: #fff;
+        filter: drop-shadow(0rem 0.4rem 0.25rem rgba(0, 0, 0, 0.03));
+    }
+
+
+/*
+_________________________________________________
+=================================================
+Slider mensen */
+
+.asideIcoon.asideIcoonMinMargin {
+    margin-bottom: 0.5rem;
+}
+
+#mensenSlider1 {
+    width: 100vw;
+    height: auto;
+}
+
+.slider {
+    display: grid;
+    grid-column-gap: 1.6vw;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+
+    cursor: grab;
+    overflow-x: scroll;
+}
+
+.item01,
+.item02 {
+    display: flex;
+    width: 25vw;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buffer01,
+.buffer02 {
+    width: 8.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buffer01 svg { margin-left: 1.5rem; }
+.buffer02 svg { margin-right: 1.5rem; }
+
+section.persoonInfo { padding: 1rem 2rem 3rem 2.5rem; }
+
+.item01 img,
+.item02 img {
+    flex-wrap: wrap;
+
+    width: 50%;
+    max-width: 200px;
+    min-width: 120px;
+    margin-top: -5rem;
+    margin-bottom: 1rem;
+
+    z-index: 2;
+    position: static;
+}
+
+.profielContainer { width: 100%; }
+
+.cardBG {
+    width: 100%;
+    height: 7rem;
+    float: inline-start;
+    background-color: #f6f3ee;
+}
+
+h3.naamTitel {
+    font-size: 1.75rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+h4.functieTitel {
+    font-size: 1.15rem;
+    font-weight: 500;
+    font-style: italic;
+
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.item01 { color: #000; background-color: #BDBBAD; }
+.item02 { color: #fff; background-color: #2b2e2a; }
+
+.item01 section h4 { color: #555b53; }
+.item02 section h4 { color: #BDBBAD; }
+
+li section p { font-size: 1.15rem; line-height: 1.75rem; }
+
+    .slider::-webkit-scrollbar {
+        visibility: hidden;
+        height: 0.75rem;
+        background: transparent;
+    }
+
+/*
+_________________________________________________
+=================================================
+Introductie banner */
+
+#introductieBanner {
+    display: flex;
+    width: 80vw;
+    height: 60vh;
+    margin: 0 auto;
+
+    background-image: url('../assets/image/home/kantoor.jpg');
+    background-size: cover;
+    background-position: 0% 60%;
+}
+
+#introductieTekst {
+    color: #fff;
+    align-self: flex-end;
+
+    padding: 3rem 3rem 5rem 3rem;
+    background-color: #2b2e2ac3;
+}
+
+#introductieTekst p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+#introductieTekst h4 {
+    color: #fff;
+    text-align: left;
+
+    margin-bottom: 1rem;
+}
+
+/*
+_________________________________________________
+=================================================
+Specialismen banner */
+
+#specialismenBanner2 {
+    display: flex;
+
+    width: 80vw;
+    min-height: 300px;
+    margin: 0 auto;
+
+    background-image: url('../assets/image/home/jason-goodman-X8H8vPcelPk-unsplash.jpg');
+    background-size: cover;
+    background-position: 40% 20%;
+}
+
+#specialismenTekst2 { width: 80% }
+
+#specialismeBG2 {
+    justify-self: flex-start;
+    width: 100%;
+
+    padding: 3rem;
+    line-height: 1.25rem;
+    background-color: #e0ded2c8;
+}
+
+#specialismenTekst2 p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+#specialismenTekst2 h4 {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+#specialismenButtons2 {
+    display: flex;
+    position: relative;
+    left: -3rem;
+    justify-content: space-evenly;
+    
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.shortcutButton2 {
+    font-size: 1rem;
+
+    height: 2.25rem;
+    width: 15rem;
+    
+    border-radius: 2rem;
+    border: none;
+    color: #fff;
+    background-color: #555b53;
+}
+
+    .shortcutButton2:hover {
+        font-weight: 600;
+
+        height: 2.25rem;
+        border-radius: 2rem;
+        border: none;
+
+        color: #000;
+        background-color: #BDBBAD;
+        filter: drop-shadow(0rem 0.4rem 0.25rem rgba(0, 0, 0, 0.03));
+    }
+
+/*
+.strafrecht     { grid-area: strafrecht; }
+.internationaal { grid-area: internationaal; }
+.algemeen       { grid-area: algemeen; }
+.vog            { grid-area: vog; }
+*/
+
+.meerButton2 {
+    cursor: pointer;
+    margin: 0 auto;
+
+    display: none;
+
+    justify-self: center;
+
+    width: 18rem;
+    height: 2.75rem;
+
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+
+    border: none;
+    border-radius: 10rem;
+    background-color: #f03c3c;
+}
+
+    .meerButton2:hover {
+        transition: all 150ms;
+
+        color: #f03c3c;
+        font-size: 1.25rem;
+        font-weight: 600;
+        background-color: #fff;
+        filter: drop-shadow(0rem 0.4rem 0.25rem rgba(0, 0, 0, 0.03));
+    }
+
+/*
+_________________________________________________
+=================================================
+Footer */
+
+footer { margin-top: -3rem; }
+
+footer article {
+    margin: auto;
+    width: 80vw;
+    margin-bottom: 4rem;
+}
+
+#shortcutFooter {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.shortcutIcon { width: 100%; height: 100%; }
+
+.shortcut01,
+.shortcut02,
+.shortcut03 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 6.5rem;
+    height: 6.5rem;
+
+    border-radius: 100%;
+    background-color: #BDBBAD;
+}
+
+    .shortcut01:hover,
+    .shortcut02:hover,
+    .shortcut03:hover {
+        background-color: #2b2e2a;
+        filter: drop-shadow(0rem 0.4rem 0.25rem rgba(0, 0, 0, 0.03));
+    }
+
+    svg.shortcutIcon:hover {
+        width: 85%;
+        height: 85%;
+        fill: #BDBBAD;
+        transition: all 250ms ease-in-out;
+    }
+
+section.shortcuts a { text-decoration: none; }
+
+    section.shortcuts a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 0.2rem;
+        text-decoration-color: #f03c3c;
+    }
+
+a h4 {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 400;
+    
+    text-align: center;
+    padding-top: 0.5rem;
+}
+
+#footerInside {
+    height: 20rem;
+
+    text-align: center;
+    background-color: #BDBBAD;
+}
+
+#footerContainer {
+    display: flex;
+    width: 80vw;
+
+    text-align: left;
+    margin: 0 auto;
+}
+
+h5 {
+    padding-top: 4rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/*
+#footerContact  { grid-area: contact; }
+#footerSocials  { grid-area: social; }
+#footerAdres    { grid-area: adres; }
+*/
+
+#footerContact p,
+#footerSocials section,
+#footerAdres p {
+    padding-top: 1rem;
+}
+
+#copyrights {
+    margin-top: 2.5rem;
+
+    color: #555b53;
+
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+/*
+_________________________________________________
+=================================================
+=================================================
+=================================================
+=================================================
+    02  ADVIES pagina 
+_________________________________________________
+=================================================
+Header */
+
+#adviesHeaderMain {
+    height: 17.5rem;
+
+    background-image: url('../assets/image/advies/kantoor.jpg');
+    background-position: center 45%;
+    background-size: cover;
+}
+
+#adviesHeaderLinks {
+    height: 100%;
+    width: 17.5vw;
+    float: left;
+
+    background-image: url('../assets/image/advies/andrew-neel-cckf4TsHAuw-unsplash.jpg');
+    background-position: center right 40%;
+    background-size: cover;
+}
+
+#adviesHeaderRechts {
+    height: 100%;
+    width: 17.5vw;
+    float: right;
+
+    background-image: url('../assets/image/advies/taisiia-shestopal-Ho20JoDSz3I-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+/*
+_________________________________________________
+=================================================
+Grid */
+
+#artikelContainerAdvies {
+    display: grid;
+    gap: 1rem;
+
+    margin: auto;
+    width: 80%;
+    height: auto;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    /* >1280px */
+    grid-template-areas: 
+    "artikel01 artikel01 artikel14 artikel14"
+    "artikel01 artikel01 artikel14 artikel14"
+    "artikel03 artikel08 artikel08 artikel02"
+    "artikel03 artikel06 artikel06 artikel02"
+    "artikel03 artikel06 artikel06 artikel05"
+    "artikel03 artikel07 artikel07 artikel05"
+    "artikel09 artikel10 artikel10 artikel10"
+    "artikel11 artikel12 artikel13 artikel13"
+    "artikel11 artikel12 artikel13 artikel13";
+}
+
+#artikel06Banner {
+    grid-area: artikel06;
+    background-image: url('../assets/image/advies/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg');
+    background-size: cover;
+    background-position: 0% 15%;
+    background-color: #2b2e2a;
+}
+
+#artikel07 { grid-area: artikel07; }
+#artikel08 { grid-area: artikel08; }
+#artikel09 { grid-area: artikel09; }
+#artikel10 { grid-area: artikel10; }
+#artikel11 { grid-area: artikel11; }
+#artikel12 { grid-area: artikel12; }
+#artikel13 { grid-area: artikel13; }
+/* alternatief voor artikel04 op advies pagina */
+#artikel14 { grid-area: artikel14; }
+
+#artikel07, #artikel12 { background-color: #2b2e2a; }
+#artikel08, #artikel11 { background-color: #e0ded2; }
+#artikel09, #artikel13 { background-color: #555b53; }
+#artikel10, #artikel14 { background-color: #BDBBAD; }
+
+/*
+_________________________________________________
+=================================================
+Specialisme banner */
+
+#specialismenBanner02 {
+    display: flex;
+
+    width: 80vw;
+    min-height: 300px;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    background-image: url('../assets/image/advies/marten-bjork-6dW3xyQvcYE-unsplash.jpg');
+    background-size: cover;
+    background-position: 0% 15%;
+}
+
+/*
+_________________________________________________
+=================================================
+=================================================
+=================================================
+=================================================
+    03  MENSEN pagina /*
+_________________________________________________
+=================================================
+Header */
+
+#mensenHeaderMain {
+    height: 17.5rem;
+
+    background-image: url('../assets/image/mensen/pexels-andrea-piacquadio-927022.jpg');
+    background-position: center 30%;
+    background-size: cover;
+}
+
+#mensenHeaderLinks {
+    height: 100%;
+    width: 17.5vw;
+    float: left;
+
+    background-image: url('../assets/image/mensen/john-schnobrich-FlPc9_VocJ4-unsplash.jpg');
+    background-position: center 50%;
+    background-size: cover;
+}
+
+#mensenHeaderRechts {
+    height: 100%;
+    width: 17.5vw;
+    float: right;
+
+    background-image: url('/assets/image/mensen/pexels-pavel-danilyuk-8111860.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+/*
+_________________________________________________
+=================================================
+afspraak containter */
+
+#afspraakContainer {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+
+    padding: 2rem 2rem 1.25rem 2rem;
+    background-color: #555b53;
+}
+
+#afspraakContainer button {
+    width: auto;
+
+    margin-bottom: 1rem;
+    padding: 0rem 2rem;
+}
+
+/*
+_________________________________________________
+=================================================
+mensen slider */
+
+#mensenSlider2,
+#mensenSlider3 { width: 100vw; height: auto; }
+
+#mensenSlider2 { margin-top: 6rem; }
+
+/* slider reverse techniek */
+
+    .slider2 {
+        display: grid;
+        grid-column-gap: 1.6vw;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 1fr;
+
+        /* past de richting aan */
+        direction: rtl;
+        /* zorgt dat de tekst goed blijft staan */
+        text-align: left;
+
+        cursor: grab;
+        overflow-x: scroll;
+    }
+
+    .slider2::-webkit-scrollbar { visibility: hidden; }
+
+    /* anders zijn pijltjes in spiegelbeeld */
+    li.reverse.buffer01 svg,
+    li.reverse.buffer02 svg {
+        margin: 0 auto;
+        transform: rotate(180deg);
+    }
+
+/*
+_________________________________________________
+=================================================
+Profiel feature */
+
+#profielFeature,
+#profielFeature2 {
+    display: flex;
+    height: 35vh;
+    width: 80vw;
+
+    margin: 3rem auto;
+}
+
+#profielFeature {
+    margin-top: 3rem;
+    background-color: #2b2e2a;
+}
+
+#profielFeature2 { background-color: #BDBBAD; }
+
+.cardBG2 {
+    width: 40rem;
+    height: 100%;
+    float: inline-start;
+    background-color: #f6f3ee;
+}
+
+.cardBG3 {
+    width: 40rem;
+    height: 100%;
+    float: inline-end;
+    background-color: #f6f3ee;
+}
+
+#featureImg {
+    height: 100%;
+    margin-left: -10rem;
+}
+
+#featureImg2 {
+    height: 100%;
+    margin-right: -10rem;
+    z-index: 2;
+}
+
+.persoonInfo2,
+.persoonInfo3 { padding: 3rem 2rem 2rem 4rem; }
+
+.persoonInfo2 p,
+.persoonInfo3 p { font-size: 1.25rem; line-height: 1.75rem; }
+
+.persoonInfo2 h3.naamTitel,
+.persoonInfo2 p { color: #fff; }
+
+.persoonInfo3 h3.naamTitel,
+.persoonInfo3 p { color: #000; }
+
+.persoonInfo2 h4.functieTitel { color: #e0ded2; }
+.persoonInfo3 h4.functieTitel { color: #555b53; }
+
+/*
+_________________________________________________
+=================================================
+=================================================
+=================================================
+=================================================
+    04  OVER ONS pagina 
+_________________________________________________
+=================================================
+Header */
+
+#overonsHeaderMain {
+    height: 17.5rem;
+
+    background-image: url('../assets/image/overons/architecture-1006884.jpg');
+    background-position: center top 55%;
+    background-size: cover;
+}
+
+#overonsHeaderLinks {
+    height: 100%;
+    width: 17.5vw;
+    float: left;
+
+    background-image: url('../assets/image/overons/koshu-kunii-ZedbiozkiyA-unsplash.jpg');
+    background-position: center right 60%;
+    background-size: cover;
+}
+
+#overonsHeaderRechts {
+    height: 100%;
+    width: 17.5vw;
+    float: right;
+
+    background-image: url('../assets/image/overons/nastuh-abootalebi-yWwob8kwOCk-unsplash.jpg');
+    background-position: center left 60%;
+    background-size: cover;
+}
+
+/*
+_________________________________________________
+=================================================
+Informatie grid */
+
+#informatieContainer {
+    display: grid;
+
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+
+    /* >1280px */
+    grid-template-areas: 
+    "banner01 banner01"
+    "banner02 banner03"
+    "banner02 banner04";
+}
+
+#introductieBanner2 { grid-area: banner01; }
+#visieBanner        { grid-area: banner02; }
+#contactBanner      { grid-area: banner03; }
+#historieBanner     { grid-area: banner04; }
+
+#introductieBanner2 
+section.infoTekst   { background-color: #2b2e2ac3; color: #fff; }
+#visieBanner        { background-color: #BDBBAD; color: #000; }
+#contactBanner      { background-color: #e0ded2; color: #000; }
+#historieBanner     { background-color: #555b53; color: #fff; }
+
+
+#introductieBanner2 {
+    background-image: url('../assets/image/overons/docusign-BbSBf5uv50A-unsplash-extended.jpg');
+    background-size: cover;
+    background-position: 0% 40%;
+}
+
+main section article#introductieBanner2 {
+    display: grid;
+    padding: 0rem;
+    background-color: #fff;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.infoTekst {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+
+    padding: 2rem;
+}
+
+.infoTekst p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+#introductieBanner2 
+section.infoTekst { padding: 3.5rem; }
+
+a { color: #f03c3c; }
+
+.infoTekst h4 {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+/*
+_________________________________________________
+=================================================
+=================================================
+=================================================
+=================================================
+    05  NAVIGATIE pagina 
+_________________________________________________
+=================================================
+Navigatie pagina voor mobiel en tablet */
+
+#navigatieContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    margin-bottom: 3rem;
+    height: 60vh;
+}
